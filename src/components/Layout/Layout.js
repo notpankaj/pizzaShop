@@ -23,7 +23,6 @@ const Layout = () => {
       <Footer />
       <Footer />
       <Footer />
-
     </div>
   );
 };

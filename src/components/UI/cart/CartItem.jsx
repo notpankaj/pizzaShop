@@ -1,9 +1,7 @@
 import React from "react";
 import { ListGroupItem } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-
 import "../../../styles/cart-item.css";
-
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 

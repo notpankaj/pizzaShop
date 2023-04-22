@@ -98,22 +98,22 @@ const PizzaDetails = () => {
               <div className="product__images">
                 <div
                   className="img__item mb-3"
-                  onClick={() => setPreviewImg(product.image01)}
+                  onClick={() => setPreviewImg(product?.image01)}
                 >
-                  <img src={product.image01} alt="" className="w-50" />
+                  <img src={product?.image01} alt="" className="w-50" />
                 </div>
                 <div
                   className="img__item mb-3"
-                  onClick={() => setPreviewImg(product.image02)}
+                  onClick={() => setPreviewImg(product?.image02)}
                 >
-                  <img src={product.image02} alt="" className="w-50" />
+                  <img src={product?.image02} alt="" className="w-50" />
                 </div>
 
                 <div
                   className="img__item"
-                  onClick={() => setPreviewImg(product.image03)}
+                  onClick={() => setPreviewImg(product?.image03)}
                 >
-                  <img src={product.image03} alt="" className="w-50" />
+                  <img src={product?.image03} alt="" className="w-50" />
                 </div>
               </div>
             </Col>
@@ -128,7 +128,7 @@ const PizzaDetails = () => {
               <div className="single__product-content">
                 <h2 className="product__title mb-3">{title}</h2>
                 <p className="product__price">
-                  {" "}
+               
                   Price: <span>${price}</span>
                 </p>
                 <p className="category mb-5">
@@ -136,7 +136,7 @@ const PizzaDetails = () => {
                 </p>
 
                 <button onClick={addItem} className="addTOCART__btn">
-                  {cartProducts.find(item => item.id === id) ? 'Update Cart' : 'Add to Cart'}
+                  {cartProducts?.find(item => item.id === id) ? 'Update Cart' : 'Add to Cart'}
                 </button>
               </div>
             </Col>
@@ -145,7 +145,7 @@ const PizzaDetails = () => {
               <div className="extraIngredientsGrid">
                 {(Object.values(ExtraIngredients)).map((ingredient) => {
                   return (
-                    <ExtraIngredient isChecked={extraIngredients.includes(ingredient)}  key={ingredient} onSelect={ingredient => updateExtraIngredients(ingredient)} ingredient={ingredient}></ExtraIngredient>
+                    <ExtraIngredient isChecked={extraIngredients?.includes(ingredient)}  key={ingredient} onSelect={ingredient => updateExtraIngredients(ingredient)} ingredient={ingredient}></ExtraIngredient>
                   )
                 })}
               </div>
@@ -162,7 +162,7 @@ const PizzaDetails = () => {
               <h2 className="related__Product-title">You might also like</h2>
             </Col>
 
-            {relatedProduct.map((item) => (
+            {relatedProduct?.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
                 <ProductCard item={item} />
               </Col>

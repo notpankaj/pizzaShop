@@ -45,7 +45,7 @@ const Header = () => {
   console.log(menuRef?.current?.classList.value);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window?.addEventListener("scroll", () => {
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
@@ -56,7 +56,7 @@ const Header = () => {
       }
     });
 
-    return () => window.removeEventListener("scroll");
+    return () => window?.removeEventListener("scroll");
   }, []);
 
   return (
@@ -71,7 +71,7 @@ const Header = () => {
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <div
               className="menu d-flex align-items-center gap-5"
-              onClick={(event) => event.stopPropagation()}
+              onClick={(event) => event?.stopPropagation()}
             >
               <div className="header__closeButton">
                 <span onClick={toggleMenu}>
